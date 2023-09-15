@@ -30,6 +30,10 @@ function AdminDashboard() {
   const showusers = () => {
     window.location.href = "./AllUsers";
   };
+
+  const PAassign = () => {
+    window.location.href = "./AssignWork";
+  };
   return (
     <div>
       <div style={{ width: "auto" }}>
@@ -70,6 +74,9 @@ function AdminDashboard() {
           Show All Users
         </button>
 
+        <button onClick={PAassign} className="btn btn-primary">
+          Project Assign
+        </button>
         <button onClick={logOut} className="btn btn-primary">
           Log Out
         </button>
