@@ -21,7 +21,7 @@ function AdminDashboard() {
   }, []);
   const logOut = () => {
     window.localStorage.clear();
-    window.location.href = "./Admin";
+    window.location.href = "./";
   };
   const adduser = () => {
     window.location.href = "./UserRegister";
