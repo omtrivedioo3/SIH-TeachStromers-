@@ -16,7 +16,6 @@ function AdminDashboard() {
   };
 
   useEffect(() => {
-    //getAllUserdata();
     getStatus();
   }, []);
   const logOut = () => {
