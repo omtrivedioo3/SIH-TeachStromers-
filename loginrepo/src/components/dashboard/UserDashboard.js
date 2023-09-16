@@ -16,7 +16,10 @@ function UserDashboard() {
         Navigate("/ShowResource");
     }
 
+    const logOut = () => {
+        Navigate("/");
 
+    }
 
     return (
         <div>
@@ -25,7 +28,9 @@ function UserDashboard() {
             <button className='btn btn-primary' onClick={showdesign} >Curriculum Design</button>
             <button className='btn btn-primary' onClick={showreview} >Curriculum Review</button>
             <button className='btn btn-primary' onClick={showresource} >Resource Repository</button>
-            {/* <button className='btn btn-primary'></button> */}
+            <button onClick={logOut} className="btn btn-primary">
+                Log Out
+            </button>
 
 
 

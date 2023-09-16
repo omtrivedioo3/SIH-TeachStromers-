@@ -60,11 +60,12 @@ function AdminDashboard() {
                   <td>{i.subject}</td>
                   <td>{i.PA_name}</td>
                   <td>{i.PR_name}</td>
-                  <td>{i.PA_status}</td>
-                  <td>{i.PR_status}</td>
+                  <td>
+                    {i.PA_status ? `Done` : `Pending`}</td>
+                  <td> {i.PR_status ? `Done` : `Pending`}</td>
                   <td>{i.PA_data}</td>
                   <td>{i.PR_data}</td>
-                  <td>{i.admin_status}</td>
+                  <td> {i.admin_status ? `Done` : `Pending`}</td>
                 </tr>
               );
             })}
