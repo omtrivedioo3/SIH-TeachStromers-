@@ -42,7 +42,7 @@ router.post("/User", async (req, res) => {
   }
 });
 
-// User  request
+// User register request
 router.post("/UserRegister", async (req, res) => {
   try {
     const { name, email, password, department, subject } = req.body;
@@ -128,5 +128,16 @@ router.post("/UserUpdate", async (req, res) => {
     });
   }
 });
+
+// get all user data to AdminDashboard
+router.get("/getAllUser", async (req, res) => {
+  try {
+    const allusers = await User.find({});
+    res.send({ data: allusers });
+  }
+  catch (err) {
+    console.log(err);
+  }
+})
 
 exports.router = router;

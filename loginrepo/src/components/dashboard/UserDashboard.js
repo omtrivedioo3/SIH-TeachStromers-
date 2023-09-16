@@ -1,18 +1,18 @@
 import React from 'react'
-import { useNavigate,Navigate } from 'react-router-dom'
+import { useNavigate, Navigate } from 'react-router-dom'
 
-function UserDashboard () {
-    const Navigate=useNavigate();
-    const showhistory=()=>{
+function UserDashboard() {
+    const Navigate = useNavigate();
+    const showhistory = () => {
         Navigate("./ShowHistory");
     }
-    const showdesign=()=>{
+    const showdesign = () => {
         Navigate("./ShowDesign");
     }
-    const showreview=()=>{
+    const showreview = () => {
         Navigate("./ShowReview");
     }
-    const showresource=()=>{
+    const showresource = () => {
         Navigate("./ShowResource");
     }
 
@@ -27,7 +27,7 @@ function UserDashboard () {
             <button className='btn btn-primary' onClick={showresource} >Resource Repository</button>
             {/* <button className='btn btn-primary'></button> */}
 
-            
+
 
         </div>
     )

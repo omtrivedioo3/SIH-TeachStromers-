@@ -5,6 +5,7 @@ const cors = require("cors");
 const Router = require("./routes/user")
 const RouterAdmin = require("./routes/admin")
 const RouterAdminDashboard = require("./routes/adminDashboard")
+const RouterResource = require("./routes/resource");
 
 
 
@@ -16,6 +17,7 @@ app.use(cors());
 app.use("/user", Router.router);
 app.use("/admin", RouterAdmin.router);
 app.use("/admin/Admin", RouterAdminDashboard.router);
+app.use("/resource", RouterResource.router);
 
 
 

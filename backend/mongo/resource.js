@@ -23,7 +23,7 @@ const ResourceRepositorySchema = new mongoose.Schema({
   r_name: { type: String, required: true },
   r_data: { type: String },
 });
-exports.AdminDashboard = new mongoose.model(
+exports.ResourceRepository = new mongoose.model(
   "ResourceRepository",
   ResourceRepositorySchema
 );

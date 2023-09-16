@@ -24,8 +24,8 @@ router.post("/AdminDashboard", async (req, res) => {
         const doc = await AdminDashboard.save();
         console.log(doc);
         return res.status(200).json({
-            success:true,
-            message:"entery created",
+            success: true,
+            message: "entery created",
             doc
         })
 
@@ -37,9 +37,19 @@ router.post("/AdminDashboard", async (req, res) => {
             message: "data cannot be fetch"
         })
     }
-
-
 });
 
+
+// get all task data to AdminDashboard
+router.get("/getStatus", async (req, res) => {
+    try {
+      const allstatus = await Dashboard.find({});
+      res.send({ data: allstatus });
+    }
+    catch (err) {
+      console.log(err);
+    }
+  })
+  
 
 exports.router = router;
