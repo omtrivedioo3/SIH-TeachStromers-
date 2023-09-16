@@ -4,16 +4,16 @@ import { useNavigate, Navigate } from 'react-router-dom'
 function UserDashboard() {
     const Navigate = useNavigate();
     const showhistory = () => {
-        Navigate("./ShowHistory");
+        Navigate("/ShowHistory");
     }
     const showdesign = () => {
-        Navigate("./ShowDesign");
+        Navigate("/ShowDesign");
     }
     const showreview = () => {
-        Navigate("./ShowReview");
+        Navigate("/ShowReview");
     }
     const showresource = () => {
-        Navigate("./ShowResource");
+        Navigate("/ShowResource");
     }
 
 

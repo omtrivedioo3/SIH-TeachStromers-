@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, Navigate } from 'react-router-dom';
+
 
 function AdminDashboard() {
   const [status, setStatus] = useState("");
+  const Navigate = useNavigate();
 
   const getStatus = async (e) => {
     // e.preventDefault();
@@ -21,7 +24,7 @@ function AdminDashboard() {
   }, []);
   const logOut = () => {
     window.localStorage.clear();
-    window.location.href = "./Admin";
+    window.location.href = "./";
   };
   const adduser = () => {
     window.location.href = "./UserRegister";
