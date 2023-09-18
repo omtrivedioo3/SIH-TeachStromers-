@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserDashboard from "../dashboard/UserDashboard";
 const User = () => {
+  
   const Navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
@@ -25,7 +26,7 @@ const User = () => {
     });
     const data1 = await res.json();
     alert(data1.message);
-console.log(data1.success)
+    console.log(data1.success)
     if (data1.success) {
       Navigate("/UserDashboard");
     }

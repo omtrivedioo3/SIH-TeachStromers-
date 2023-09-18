@@ -4,6 +4,11 @@ const express = require("express");
 const Router = require("router");
 const { mongo } = require("mongoose");
 const router = Router();
+const multer = require('multer');
+
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 let user;
 let admin;
@@ -43,9 +48,10 @@ router.post("/User", async (req, res) => {
 });
 
 // User register request
-router.post("/UserRegister", async (req, res) => {
+router.post("/UserRegister", upload.single('pdf'), async (req, res) => {
   try {
     const { name, email, password, department, subject } = req.body;
+    const pdfData = req.file.buffer;
 
     const UserDetail = new User({
       name,
@@ -53,6 +59,7 @@ router.post("/UserRegister", async (req, res) => {
       password,
       department,
       subject,
+      PA_data: pdfData
     });
     const doc = await UserDetail.save();
     console.log(doc);

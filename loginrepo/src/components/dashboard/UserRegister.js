@@ -11,9 +11,8 @@ function UserRegister() {
     department:"",
     subject:"",
     p_assignment:"",
-    p_review:""
-
-
+    p_review:"",
+    
   });
 
   const handleChange = (e) => {

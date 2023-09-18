@@ -4,7 +4,7 @@ import User from './User'
 import Admin from './Admin'
 import { useNavigate } from "react-router-dom";
 
-const NavBar = (props) => {
+const NavBar = ({ user }) => {
   const Navigate = useNavigate();
   return (
     <div>

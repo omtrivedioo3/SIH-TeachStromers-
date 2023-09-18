@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
+const multer = require('multer');
 const Router = require("./routes/user")
 const RouterAdmin = require("./routes/admin")
 const RouterAdminDashboard = require("./routes/adminDashboard")

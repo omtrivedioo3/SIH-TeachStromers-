@@ -22,7 +22,7 @@ const AdminDashboardSchema = new mongoose.Schema({
     PR_name: { type: String, required: true },
     PA_status: { type: Boolean, default: false },
     PR_status: { type: Boolean, default: false },
-    PA_data: { type: String },
+    PA_data: { type: Buffer },
     PR_data: { type: String },
     admin_status: { type: Boolean, default: false },
 });
