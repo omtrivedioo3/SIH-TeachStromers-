@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserDashboard from "../dashboard/UserDashboard";
 const User = () => {
-  
   const Navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
@@ -26,7 +25,7 @@ const User = () => {
     });
     const data1 = await res.json();
     alert(data1.message);
-    console.log(data1.success)
+    console.log(data1.success);
     if (data1.success) {
       Navigate("/UserDashboard");
     }
@@ -37,7 +36,8 @@ const User = () => {
       <h1>Hello User!</h1>
       <div className="mb-3">
         <label>Useremail:-</label>
-        <input type="text"
+        <input
+          type="text"
           name="email"
           value={user.email}
           onChange={handleChange}
@@ -62,9 +62,7 @@ const User = () => {
           Submit
         </button>
       </div>
-
     </form>
   );
-
-}
+};
 export default User;

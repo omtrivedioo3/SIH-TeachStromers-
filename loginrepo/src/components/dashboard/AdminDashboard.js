@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Navigate } from 'react-router-dom';
-
+import { useNavigate, Navigate } from "react-router-dom";
 
 function AdminDashboard() {
   const [status, setStatus] = useState("");
@@ -60,8 +59,7 @@ function AdminDashboard() {
                   <td>{i.subject}</td>
                   <td>{i.PA_name}</td>
                   <td>{i.PR_name}</td>
-                  <td>
-                    {i.PA_status ? `Done` : `Pending`}</td>
+                  <td>{i.PA_status ? `Done` : `Pending`}</td>
                   <td> {i.PR_status ? `Done` : `Pending`}</td>
                   <td>{i.PA_data}</td>
                   <td>{i.PR_data}</td>
