@@ -19,13 +19,16 @@ try {
 }
 
 const userSchema = new mongoose.Schema({
+  userid: { type: String, required: true },
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: {
     type: String,
-    minLength: 8,
+    minLength: 6,
     required: true,
   },
+  university: { type: String, required: true },
+  institute: { type: String, required: true },
   department: { type: String, required: true },
   subject: { type: String, required: true },
   p_assignment: {

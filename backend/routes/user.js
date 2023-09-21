@@ -50,7 +50,16 @@ router.post("/User", async (req, res) => {
 router.post("/UserRegister", async (req, res) => {
   try {
     let success = false;
-    const { name, email, password, department, subject } = req.body;
+    const {
+      userid,
+      name,
+      email,
+      password,
+      university,
+      institute,
+      department,
+      subject,
+    } = req.body;
     // const pdfData = req.file.buffer;
 
     const userValid = await User.findOne({ email: email });
@@ -59,9 +68,12 @@ router.post("/UserRegister", async (req, res) => {
       res.send({ message: "Email already registred" });
     } else {
       const UserDetail = new User({
+        userid,
         name,
         email,
         password,
+        university,
+        institute,
         department,
         subject,
       });

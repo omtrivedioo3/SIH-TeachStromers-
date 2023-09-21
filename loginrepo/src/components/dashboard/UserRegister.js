@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate,Navigate } from 'react-router-dom';
+import { useNavigate, Navigate } from "react-router-dom";
 
 function UserRegister() {
-
-   const Navigate = useNavigate();
+  const Navigate = useNavigate();
   const [user, setUser] = useState({
+    userid: "",
     name: "",
     email: "",
-    password:"",
-    department:"",
-    subject:"",
-    p_assignment:"",
-    p_review:"",
-    
+    password: "",
+    university: "",
+    institute: "",
+    department: "",
+    subject: "",
+    p_assignment: "",
+    p_review: "",
   });
 
   const handleChange = (e) => {
@@ -37,21 +38,28 @@ function UserRegister() {
     }
   };
 
-  const backbutton=()=>{
+  const backbutton = () => {
     Navigate("/AdminDashboard");
-  }
-    return (
-        <form onSubmit={registerUser}>
-        
-        <div className="d-grid">
+  };
+  return (
+    <form onSubmit={registerUser}>
+      <div className="d-grid">
         <button onClick={backbutton} type="back" className="btn btn-primary">
           Back
         </button>
       </div>
 
-
       <div className="mb-3">
-        <label> Name:-</label>
+        <input
+          type="text"
+          name="userid"
+          value={user.userid}
+          onChange={handleChange}
+          className="form-control"
+          placeholder="User ID"
+        />
+      </div>
+      <div className="mb-3">
         <input
           type="text"
           name="name"
@@ -62,18 +70,16 @@ function UserRegister() {
         />
       </div>
       <div className="mb-3">
-        <label>Email:-</label>
         <input
           type="email"
           name="email"
           className="form-control"
           value={user.email}
           onChange={handleChange}
-          placeholder="Enter your Password"
+          placeholder="Enter your Email"
         />
       </div>
       <div className="mb-3">
-        <label>Password:-</label>
         <input
           type="password"
           name="password"
@@ -84,7 +90,26 @@ function UserRegister() {
         />
       </div>
       <div className="mb-3">
-        <label>Department-</label>
+        <input
+          type="text"
+          name="university"
+          value={user.university}
+          onChange={handleChange}
+          className="form-control"
+          placeholder="University Name"
+        />
+      </div>
+      <div className="mb-3">
+        <input
+          type="text"
+          name="institute"
+          value={user.institute}
+          onChange={handleChange}
+          className="form-control"
+          placeholder="Institute Name"
+        />
+      </div>
+      <div className="mb-3">
         <input
           type="text"
           name="department"
@@ -95,50 +120,44 @@ function UserRegister() {
         />
       </div>
       <div className="mb-3">
-        <label>Subject:-</label>
         <input
           type="text"
           name="subject"
           className="form-control"
           value={user.subject}
           onChange={handleChange}
-          placeholder="Enter your Password"
+          placeholder="Enter your Subject"
         />
       </div>
-     
+
       <div className="mb-3">
-        <label>Project assignment:-</label>
         <input
           type="text"
           name="p_assignment"
           className="form-control"
           value={user.p_assignment}
           onChange={handleChange}
-          placeholder="Enter your Password"
+          placeholder="Project assignment"
         />
       </div>
-       <div className="mb-3">
-        <label>Project review:-</label>
+      <div className="mb-3">
         <input
           type="text"
           name="p_review"
           className="form-control"
           value={user.p_review}
           onChange={handleChange}
-          placeholder="Enter your Password"
+          placeholder="Project Review"
         />
       </div>
-
-
 
       <div className="d-grid">
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </div>
-       
-    </form>   
-    )
+    </form>
+  );
 }
 
-export default UserRegister
+export default UserRegister;
