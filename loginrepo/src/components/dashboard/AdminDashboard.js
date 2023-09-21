@@ -37,9 +37,9 @@ function AdminDashboard() {
     window.location.href = "./AssignWork";
   };
   return (
-    <div>
+    <div className="auth-inner2">
       <div style={{ width: "auto" }}>
-        <table style={{ width: 500 }}>
+        <table style={{ width: 500 }} class="table">
           <tr>
             <th>p_id</th>
             <th>subject</th>
@@ -54,7 +54,7 @@ function AdminDashboard() {
           {status &&
             status.map((i) => {
               return (
-                <tr>
+                <tr class="table-success">
                   <td>{i.p_id}</td>
                   <td>{i.subject}</td>
                   <td>{i.PA_name}</td>

@@ -25,7 +25,7 @@ function AllUsers() {
   }, []);
 
   return (
-    <div>
+    <div className="auth-inner2">
       <div style={{ width: "auto" }}>
         <table class="table align-middle mb-0 bg-white">
           <thead class="bg-light">

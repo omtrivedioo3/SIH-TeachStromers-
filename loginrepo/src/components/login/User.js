@@ -68,49 +68,48 @@ const User = () => {
     //     </button>
     //   </div>
     // </form>
-    <>
-      <div class="wrapper fadeInDown">
-        <div id="formContent">
-          <img
-            class="fadeIn second"
-            src="https://theacademicinsights.com/wp-content/uploads/2020/10/AICTE-logo.jpeg"
-            alt=""
-            width="335"
-            height="189"
-          ></img>
-          <br />
-          <h2 class="active"> User </h2>
-          <h2 class="inactive underlineHover" onClick={toAdmin}>
-            Admin{" "}
-          </h2>
 
-          <form onSubmit={loginUser}>
-            <input
-              type="text"
-              id="login"
-              class="fadeIn second"
-              name="email"
-              value={user.email}
-              onChange={handleChange}
-              className="form-control"
-              placeholder="Useremail"
-            />
-            <input
-              id="password"
-              class="fadeIn third"
-              name="login"
-              type="password"
-              name="password"
-              className="form-control"
-              value={user.password}
-              onChange={handleChange}
-              placeholder="Enter your Password"
-            />
-            <input type="submit" class="fadeIn fourth" value="Log In" />
-          </form>
-        </div>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <img
+          class="fadeIn second"
+          src="https://theacademicinsights.com/wp-content/uploads/2020/10/AICTE-logo.jpeg"
+          alt=""
+          width="335"
+          height="189"
+        ></img>
+        <br />
+        <h2 class="active"> User </h2>
+        <h2 class="inactive underlineHover" onClick={toAdmin}>
+          Admin{" "}
+        </h2>
+
+        <form onSubmit={loginUser}>
+          <input
+            type="text"
+            id="login"
+            class="fadeIn second"
+            name="email"
+            value={user.email}
+            onChange={handleChange}
+            className="form-control"
+            placeholder="Useremail"
+          />
+          <input
+            id="password"
+            class="fadeIn third"
+            name="login"
+            type="password"
+            name="password"
+            className="form-control"
+            value={user.password}
+            onChange={handleChange}
+            placeholder="Enter your Password"
+          />
+          <input type="submit" class="fadeIn fourth" value="Log In" />
+        </form>
       </div>
-    </>
+    </div>
   );
 };
 export default User;

@@ -22,7 +22,7 @@ const App = () => {
       <Router>
         <Fragment>
           <div className="auth-wrapper">
-            <div className="auth-inner">
+            <div>
               <Routes>
                 <Route exact path="/" element={<NavBar />} />
                 <Route exact path="/Admin" element={<Admin />} />

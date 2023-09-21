@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, Navigate } from "react-router-dom";
-import "./UserDashboard.css";
+import styles from "./UserDashboard.css";
 
 function UserDashboard() {
   const Navigate = useNavigate();
@@ -22,7 +22,7 @@ function UserDashboard() {
   };
 
   return (
-    <div>
+    <div className="auth-inner2">
       Hello User!
       <button className="btn btn-primary" onClick={showhistory}>
         History

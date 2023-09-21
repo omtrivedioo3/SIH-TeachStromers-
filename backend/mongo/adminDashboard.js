@@ -25,7 +25,7 @@ const AdminDashboardSchema = new mongoose.Schema({
   PR_name: { type: String, required: true },
   PA_status: { type: Boolean, default: false },
   PR_status: { type: Boolean, default: false },
-  PA_data: { type: mongoose.Schema.Types.ObjectId },
+  PA_data: { type: String },
   PR_data: { type: String },
   admin_status: { type: Boolean, default: false },
 });

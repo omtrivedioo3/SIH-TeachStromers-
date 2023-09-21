@@ -42,121 +42,135 @@ function UserRegister() {
     Navigate("/AdminDashboard");
   };
   return (
-    <form onSubmit={registerUser}>
-      <div className="d-grid">
-        <button onClick={backbutton} type="back" className="btn btn-primary">
-          Back
-        </button>
-      </div>
+    <div className="auth-inner2">
+      <form onSubmit={registerUser}>
+        <div className="d-grid">
+          <button onClick={backbutton} type="back" className="btn btn-primary">
+            Back
+          </button>
+        </div>
+        <div
+          className="InputUserRegister"
+          style={{ display: "flex", textAlign: "center", padding: "10px" }}
+        >
+          <div className="InputUserRegister1">
+            <div className="mb-3">
+              <input
+                type="text"
+                name="userid"
+                value={user.userid}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="User ID"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="name"
+                value={user.name}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Admin Name"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="email"
+                name="email"
+                className="form-control"
+                value={user.email}
+                onChange={handleChange}
+                placeholder="Enter your Email"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="password"
+                name="password"
+                className="form-control"
+                value={user.password}
+                onChange={handleChange}
+                placeholder="Enter your Password"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="university"
+                value={user.university}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="University Name"
+              />
+            </div>
+          </div>
+          <div className="InputUserRegister">
+            <div className="mb-3">
+              <input
+                type="text"
+                name="institute"
+                value={user.institute}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Institute Name"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="department"
+                className="form-control"
+                value={user.department}
+                onChange={handleChange}
+                placeholder="Enter your Department"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="subject"
+                className="form-control"
+                value={user.subject}
+                onChange={handleChange}
+                placeholder="Enter your Subject"
+              />
+            </div>
 
-      <div className="mb-3">
-        <input
-          type="text"
-          name="userid"
-          value={user.userid}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="User ID"
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="text"
-          name="name"
-          value={user.name}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="Admin Name"
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="email"
-          name="email"
-          className="form-control"
-          value={user.email}
-          onChange={handleChange}
-          placeholder="Enter your Email"
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="password"
-          name="password"
-          className="form-control"
-          value={user.password}
-          onChange={handleChange}
-          placeholder="Enter your Password"
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="text"
-          name="university"
-          value={user.university}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="University Name"
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="text"
-          name="institute"
-          value={user.institute}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="Institute Name"
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="text"
-          name="department"
-          className="form-control"
-          value={user.department}
-          onChange={handleChange}
-          placeholder="Enter your Department"
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="text"
-          name="subject"
-          className="form-control"
-          value={user.subject}
-          onChange={handleChange}
-          placeholder="Enter your Subject"
-        />
-      </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="p_assignment"
+                className="form-control"
+                value={user.p_assignment}
+                onChange={handleChange}
+                placeholder="Project assignment"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="p_review"
+                className="form-control"
+                value={user.p_review}
+                onChange={handleChange}
+                placeholder="Project Review"
+              />
+            </div>
 
-      <div className="mb-3">
-        <input
-          type="text"
-          name="p_assignment"
-          className="form-control"
-          value={user.p_assignment}
-          onChange={handleChange}
-          placeholder="Project assignment"
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="text"
-          name="p_review"
-          className="form-control"
-          value={user.p_review}
-          onChange={handleChange}
-          placeholder="Project Review"
-        />
-      </div>
-
-      <div className="d-grid">
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </div>
-    </form>
+            <div className="d-grid">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                style={{ width: "inherit" }}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }
 

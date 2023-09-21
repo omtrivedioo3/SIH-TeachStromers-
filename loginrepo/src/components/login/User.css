@@ -281,10 +281,6 @@ input[type="text"]:placeholder {
   width: 60%;
 }
 
-.auth-inner {
-  /* background: none; */
-}
-
 * {
   box-sizing: border-box;
 }

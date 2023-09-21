@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import User from "./User";
 import Admin from "./Admin";
@@ -7,6 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = ({ user }) => {
   const Navigate = useNavigate();
+  const gotoLogin = () => {
+    Navigate("/User");
+  };
+  useEffect(() => {
+    gotoLogin();
+  }, []);
   return (
     <div>
       <Link to="/Admin">
