@@ -28,27 +28,31 @@ function ShowResource() {
     Navigate("/UserDashboard");
   };
   return (
-    <div>
-      <table style={{ width: 500 }}>
-        <tr>
-          <th>ID</th>
-          <th>Subject</th>
-          <th>Name</th>
-          <th>Link</th>
-        </tr>
+    <div className="auth-inner2">
+      <table style={{ width: 500 }} class="table table-sm" class="table">
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>Subject</th>
+            <th>Name</th>
+            <th>Link</th>
+          </tr>
+        </thead>
         {resoursces &&
           resoursces.map((i) => {
             return (
-              <tr>
-                <td>{i.r_id}</td>
-                <td>{i.subject}</td>
-                <td>{i.r_name}</td>
-                <td>
-                  <a href={i.r_data} target="_blank">
-                    View
-                  </a>
-                </td>
-              </tr>
+              <tbody class="table-light">
+                <tr>
+                  <td>{i.r_id}</td>
+                  <td>{i.subject}</td>
+                  <td>{i.r_name}</td>
+                  <td>
+                    <a href={i.r_data} target="_blank">
+                      View
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
             );
           })}
       </table>

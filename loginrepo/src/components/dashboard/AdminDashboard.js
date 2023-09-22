@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Navigate } from 'react-router-dom';
-
+import { useNavigate, Navigate } from "react-router-dom";
 
 function AdminDashboard() {
   const [status, setStatus] = useState("");
@@ -38,9 +37,9 @@ function AdminDashboard() {
     window.location.href = "./AssignWork";
   };
   return (
-    <div>
+    <div className="auth-inner2">
       <div style={{ width: "auto" }}>
-        <table style={{ width: 500 }}>
+        <table style={{ width: 500 }} class="table">
           <tr>
             <th>p_id</th>
             <th>subject</th>
@@ -55,13 +54,12 @@ function AdminDashboard() {
           {status &&
             status.map((i) => {
               return (
-                <tr>
+                <tr class="table-success">
                   <td>{i.p_id}</td>
                   <td>{i.subject}</td>
                   <td>{i.PA_name}</td>
                   <td>{i.PR_name}</td>
-                  <td>
-                    {i.PA_status ? `Done` : `Pending`}</td>
+                  <td>{i.PA_status ? `Done` : `Pending`}</td>
                   <td> {i.PR_status ? `Done` : `Pending`}</td>
                   <td>{i.PA_data}</td>
                   <td>{i.PR_data}</td>

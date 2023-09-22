@@ -4,8 +4,7 @@ const express = require("express");
 const Router = require("router");
 const { mongo } = require("mongoose");
 const router = Router();
-const multer = require('multer');
-
+const multer = require("multer");
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
@@ -48,26 +47,45 @@ router.post("/User", async (req, res) => {
 });
 
 // User register request
-router.post("/UserRegister", upload.single('pdf'), async (req, res) => {
+router.post("/UserRegister", async (req, res) => {
   try {
-    const { name, email, password, department, subject } = req.body;
-    const pdfData = req.file.buffer;
-
-    const UserDetail = new User({
+    let success = false;
+    const {
+      userid,
       name,
       email,
       password,
+      university,
+      institute,
       department,
       subject,
-      PA_data: pdfData
-    });
-    const doc = await UserDetail.save();
-    console.log(doc);
-    return res.status(200).json({
-      success: true,
-      message: "entery created",
-      doc: doc,
-    });
+    } = req.body;
+    // const pdfData = req.file.buffer;
+
+    const userValid = await User.findOne({ email: email });
+    if (userValid) {
+      success = false;
+      res.send({ message: "Email already registred" });
+    } else {
+      const UserDetail = new User({
+        userid,
+        name,
+        email,
+        password,
+        university,
+        institute,
+        department,
+        subject,
+      });
+
+      const doc = await UserDetail.save();
+      console.log(doc);
+      return res.status(200).json({
+        success: true,
+        message: "entery created",
+        doc: doc,
+      });
+    }
   } catch (err) {
     return res.status(500).json({
       success: false,
@@ -141,10 +159,9 @@ router.get("/getAllUser", async (req, res) => {
   try {
     const allusers = await User.find({});
     res.send({ data: allusers });
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err);
   }
-})
+});
 
 exports.router = router;
